@@ -42,7 +42,7 @@ class BootstrapApplication : WolmoApplication() {
      * @param newLevel - Logging newLevel for the interceptor.
      * @return New instance of interceptor
      */
-    private fun buildHttpLoggingInterceptor(newLevel: HttpLoggingInterceptor.Level): HttpLoggingInterceptor {
+    private fun buildHttpLoggingInterceptor(newLevel: Level): HttpLoggingInterceptor {
         return HttpLoggingInterceptor().apply { this.level = newLevel }
     }
 }

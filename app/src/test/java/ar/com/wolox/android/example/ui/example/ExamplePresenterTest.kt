@@ -1,5 +1,6 @@
 package ar.com.wolox.android.example.ui.example
 
+import ar.com.wolox.android.example.network.repository.PostRepository
 import ar.com.wolox.android.example.utils.UserSession
 import ar.com.wolox.wolmo.core.tests.WolmoPresenterTest
 import org.junit.Test
@@ -12,7 +13,10 @@ class ExamplePresenterTest : WolmoPresenterTest<ExampleView, ExamplePresenter>()
     @Mock
     lateinit var userSession: UserSession
 
-    override fun getPresenterInstance() = ExamplePresenter(userSession)
+    @Mock
+    lateinit var postRepository: PostRepository
+
+    override fun getPresenterInstance() = ExamplePresenter(userSession, postRepository)
 
     @Test
     fun `given an user and a color when login button is clicked then user session should be updated`() {
